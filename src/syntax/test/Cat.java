@@ -26,7 +26,31 @@ public class Cat {
     }
 
     public boolean fight(Cat anotherCat) {
-        //code
+        int countThisCat = 0;
+        int countAnotherCat = 0;
+
+        if (this.age > anotherCat.age) {
+            countThisCat++;
+        } else if(this.age < anotherCat.age) {
+            countAnotherCat++;
+        }
+
+        if (this.weight > anotherCat.weight) {
+            countThisCat++;
+        } else if(this.weight < anotherCat.weight) {
+            countAnotherCat++;
+        }
+
+        if (this.strength > anotherCat.strength) {
+            countThisCat++;
+        } else if(this.strength < anotherCat.strength) {
+            countAnotherCat++;
+        }
+
+        if (countThisCat == countAnotherCat) {
+            return this.hashCode() > anotherCat.hashCode();
+        }
+        return countThisCat > countAnotherCat;
     }
 
     public static void main(String[] args) {
